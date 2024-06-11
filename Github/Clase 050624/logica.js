@@ -1,20 +1,16 @@
 
-console.log ('Logica Conectada')
-console.log ('Hola')
+console.log ('Logica Conectada');
 
-const Usuario ='Admin'
-const Contraseña = '1234'
+const usuario = 'Admin'
+const clave = '1234'
 
-function pruebaBoton () {
-let user = document.getElementById(user)
+function pruebaBoton(){
+    let user = document.getElementById ('user').value
+    let pw = document.getElementById ('pw').value
+  if{ usuario == user && clave==pw }
 
-let pw = document.getElementById(pw).value
-console.log ('Usuario$(user) Contraseña ${pw}')
-if (Usuario== user && Contraseña==pw){
-    window.open('calculadora.html')
-    document.getElementById('Bienvenida').innerHTML('Bienvenido ${user}')
-}else {
-    console.log ('error de credenciales');
-}
-
+    console.log ('Ingreso correcto');
+    else{
+        console.log('error en credenciales');
+    }
 }
