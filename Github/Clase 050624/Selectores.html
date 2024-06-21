@@ -38,8 +38,22 @@
                                     placeholder=" Ingrese Contraseña" aria-describedby="passwordHelpBlock">
                                 <button type="button" class="btn btn-primary btn-sm mt-3"
                                     onclick="pruebaBoton()">Entrar</button>
+                                <button type="button" class="btn btn-dark btn-sm mt-3"
+                                    onclick="imprimirArreglo()">Imprimir</button>
+
+                            
+                                    <input id="arrayPosicion" type="number"  placeholder="Ingrese Posicion del vector"
+                                    class="form -control" aria-describedby="passwordHelpBlock">
+
+                               
+
+        <label for="inputPassword5" class="form-label mt-4">Agregar Frutas</label>
+        <input id="NombreFruta" type="text"  placeholder="Ingrese el nombre de fruta" class="form -control" aria-describedby="passwordHelpBlock">
+        <button type="button" class="btn btn-success btn-sm mt-3"onclick="AgregarFruta()">Agregar</button>
+        <button type="button" class="btn btn-danger btn-sm mt-3" onclick="EliminarFruta()">Eliminar</button>
                             </div>
             </div>
+            
             <script src="./logica.js"></script>
 
 </body>
