@@ -17,7 +17,8 @@ function pruebaBoton(){
 }
 function imprimirArreglo() {
     let posicion= document.getElementById('arrayPosicion').value
-    
+    console.log(localStorage.getItem(arregloFrutas));
+
     if(posicion>=frutas.length){
         console.log('posicion no valida');
         limpiar()
@@ -33,13 +34,26 @@ function limpiar() {
 
 }
 function AgregarFruta(){
-    const NombreFruta = document.getElementById('NombreFruta'). value
+    let NombreFruta = document.getElementById('NombreFruta'). value.toLocaleUpperCase()
+    NombreFruta=NombreFruta.trim()
+    if(NombreFruta.trim()!==''){
     frutas.push(NombreFruta)
+    guardarStorage(frutas)
     console.log('Se Agrega la fruta ${NombreFruta}')
-    document.getElementById('NombreFruta').focus
+    document.getElementById('NombreFruta').focus()
+    }else{
+        console.log('Nombre no Valido')
+    }
+
 
 }
 function EliminarFruta(){
-    console.log ('Eliminar');
+    let posicion= document.getElementById('arrayPosicion').value
+    frutas.splice(posicion,1)
+    console.log ('Eliminar'+ frutas);
 
+    }
+    function guardarStorage(arreglo){
+    localStorage.setItem('Arreglo Frutas', arreglo)
+    console.log ('Guardado en storage');
     }
