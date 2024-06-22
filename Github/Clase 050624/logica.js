@@ -17,8 +17,7 @@ function pruebaBoton(){
 }
 function imprimirArreglo() {
     let posicion= document.getElementById('arrayPosicion').value
-    console.log(localStorage.getItem(arregloFrutas));
-
+    console.log(localStorage.getItem('AgregarFruta'));
     if(posicion>=frutas.length){
         console.log('posicion no valida');
         limpiar()
