@@ -1,20 +1,33 @@
 
-console.log ('Logica Conectada');
+console.log ('Logica Inicio Sesion');
 
 const usuario = 'Admin'
 const clave = '1234'
 const frutas=['Manzana','Pera','sandia']
 
 function pruebaBoton(){
-    let user = document.getElementById ('user').value
+    let user = document.getElementById ('user').value.toLocaleUpperCase()
     let pw = document.getElementById ('pw').value
 
-    if ( usuario==user && clave==pw){
+    if ( usuario.toLocaleUpperCase()==user && clave==pw){
         setUser()
         window.open('local_Storage.html')
     // console.log ('Ingreso correcto')
     }else{
+        contarIntentos()
         console.log('error en credenciales');
+
+
+    function bloquearCuenta(){
+
+    }
+
+    let contador= 0
+    function contarIntentos(){
+        contador ++
+        console.log ('contador'${contador});
+
+    }
     }
     function setUser(){
         localStorage.setItem('Usuario',usuario)
