@@ -4,6 +4,7 @@ console.log ('Logica Inicio Sesion');
 const usuario = 'Admin'
 const clave = '1234'
 const frutas=['Manzana','Pera','sandia']
+let contador =0
 
 function pruebaBoton(){
     let user = document.getElementById ('user').value.toLocaleUpperCase()
@@ -14,27 +15,40 @@ function pruebaBoton(){
         window.open('local_Storage.html')
     // console.log ('Ingreso correcto')
     }else{
-        contarIntentos()
+       
+        bloquearCuenta()
         console.log('error en credenciales');
-
+    }
 
     function bloquearCuenta(){
+        if (contador==3){
+            console.log('Cuenta Bloqueada');
+        }else{
+            contarIntentos()
+        }
 
     }
 
-    let contador= 0
     function contarIntentos(){
-        contador ++
-        console.log ('contador'${contador});
-
+        let contador=  localStorage.getItem('contador')
+       contador++
+    console.log (`contador ${localStorage.getItem('contador')}`);
+        setcontador(contador)
     }
+
+  
+
+ 
     }
     function setUser(){
         localStorage.setItem('Usuario',usuario)
 
     }
-   
-}
+    function setcontador(contador){
+        localStorage.setItem('contador',contador)
+
+    }
+
 function imprimirArreglo() {
     let posicion= document.getElementById('arrayPosicion').value
     console.log(localStorage.getItem('AgregarFruta'));
