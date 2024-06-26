@@ -21,7 +21,10 @@ function pruebaBoton(){
     }
 
     function bloquearCuenta(){
-        if (contador==3){
+        let contadorStorage=  localStorage.getItem('contador') || 0
+        console.log(`valor inicial storage ${contadorStorage}`);
+        
+        if (contadorStorage==3){
             console.log('Cuenta Bloqueada');
         }else{
             contarIntentos()
@@ -30,10 +33,10 @@ function pruebaBoton(){
     }
 
     function contarIntentos(){
-        let contador=  localStorage.getItem('contador')
-       contador++
-    console.log (`contador ${localStorage.getItem('contador')}`);
-        setcontador(contador)
+        let contadorStorage=  localStorage.getItem('contador') || 0
+        contadorStorage++
+    console.log (`contador ${contadorStorage}`);
+        setcontador(contadorStorage)
     }
 
   
@@ -47,6 +50,11 @@ function pruebaBoton(){
     function setcontador(contador){
         localStorage.setItem('contador',contador)
 
+    }
+
+    function desbloquearCuenta(){
+        // localStorage.setItem('contador',0); 
+        localStorage.removeItem('contador');
     }
 
 function imprimirArreglo() {
