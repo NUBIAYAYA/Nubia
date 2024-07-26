@@ -1,19 +1,19 @@
 function registrar() {
-    const Document Type = document.getElementById("Document Type").value;
-    const Document Number = document.getElementById("Document Number").value;
+    const DocumentType = document.getElementById("DocumentType").value;
+    const DocumentNumber = document.getElementById("DocumentNumber").value;
     const Name = document.getElementById("Name").value;
     const Surnames = document.getElementById("Surnames").value;
     const Email = document.getElementById("Email").value;
     const Phone = document.getElementById("Phone").value;
-    const Birth date= document.getElementById("Birth date").value;
+    const Birthdate= document.getElementById("Birthdate").value;
     const dataUsuario = {
-        Document Type :Document Type,
-        Document Number : Document Number,
+        DocumentType :DocumentType,
+        DocumentNumber : DocumentNumber,
         Name : Name,
         Surnames : Surnames,
         Email : Email,
         Phone: Phone,
-        Birth date : Birth date,
+        Birthdate : Birthdate,
  };
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
   
